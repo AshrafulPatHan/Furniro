@@ -3,5 +3,12 @@
     padding: 0px;
 }
 
+@font-face{
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat.ttf') format('truetype'); 
+}
 
+.Font-m{
+    font-family: 'Montserrat';
+}
 
