@@ -7,8 +7,15 @@
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat.ttf') format('truetype'); 
 }
+@font-face{
+    font-family: 'Poppins-Light';
+    src: url('../fonts/Poppins-Light.ttf') format('truetype'); 
+}
 
 .Font-m{
     font-family: 'Montserrat';
+}
+body{
+    font-family: 'Poppins-Light';
 }
 
