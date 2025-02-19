@@ -49,3 +49,22 @@ body{
     align-items: center;
     gap: 45px;
 }
+
+/* hero section */
+.hero{
+    background-image: url(../asset/livinrom.png);
+    height: 716.83px;
+}
+.hero-div{
+    width: 643px;
+    height: 443px;
+    background-color: #FFF3E3;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* padding-left: 49px;
+    padding-top: 62px; */
+}
+
+
+
