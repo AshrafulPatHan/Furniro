@@ -38,12 +38,16 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: 34px;
+    font-weight: 900;
 }
 .nav_div2{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 75px;
+    font-size: 1rem;
+    font-weight: 600;
 }
 .nav_div-button{
     display: flex;
@@ -51,6 +55,11 @@ body{
     align-items: center;
     gap: 45px;
 }
+.nav-btn{
+    background-color: #ffff;
+    border: none;
+}
+
 
 /* hero section */
 .hero{
@@ -134,8 +143,56 @@ body{
     margin-top: 56px;
 }
 
+/* section 3 */
+.sec3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 56px;
+}
+.sec3-had{
+    font-size: 40px;
+    font-weight: 700;
+}
+.sec3-btn{
+    width: 245px;
+    height: 48px;
+    color: #B88E2F;
+    border: 1px solid #B88E2F;
+    font-weight: 700;
+    background-color: white;
+    letter-spacing: 1px;
+    margin-top: 32px;
+    margin-bottom: 69px;
+}
 
 
+/* section 4 */
+.sec4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* section 5 */
+.sec5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 67px;
+}
+
+.sec5-par{
+    font-size: 20px;
+    font-weight: 600px;
+    color: #616161;
+}
+.sec5-had{
+    font-size: 40px;
+    font-weight: 700;
+    color: #3A3A3A;
+}
 
 
 /* Footer */
@@ -198,7 +255,21 @@ body{
     text-align: start;
     justify-content: start;
 }
-
+/* font */
+.footer-had{
+    font-size: 24px;
+    font-weight: 600;
+}
+.footer-adde{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #9F9F9F;
+}
+.footer-ses-hader{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #9F9F9F;
+}
 
 
 
