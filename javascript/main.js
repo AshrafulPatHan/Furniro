@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 sec3Div.innerHTML = data.map(item => `
                     <div class="product-card">
                         <img src="${item.Img}" alt="Product Image" class="product-img">
+                        <h3 class="product-name">${item.name}</h3>
+                        <p class="product-price">Price: ${item.price} $</p>
                     </div>
                 `).join("");
             })
