@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json();
             })
             .then(data => {
-                console.log("Fetched Data:", data); // একবারই কনসোলে প্রিন্ট করা হচ্ছে
+                console.log("Fetched Data:", data); 
 
                 sec3Div.innerHTML = data.map(item => `
                     <div class="product-card">

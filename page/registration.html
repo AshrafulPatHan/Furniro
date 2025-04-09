@@ -4,8 +4,41 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Registration</title>
+   <!-- Link bootstrap -->
+      <link rel="stylesheet" href="../Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+   <!-- Link css -->
+      <link rel="stylesheet" href="../Style/style.css">
 </head>
 <body>
+   <!-- Navbar -->
+   <nav class="nav">
+      <div class="nav_div">
+         <img src="../asset/Logos-05 (1).png" width="50" height="32" alt="logo">
+         <h3>Furniro</h3>
+      </div>
+      <div class="nav_div2">
+         <a href="../index.html">Home</a>
+         <p>Shop</p>
+         <p>About</p>
+         <p>Contact</p>
+         <a href="./login.html">Login</a>
+         <a href="./registration.html">Registration</a>
+      </div>
+      <div class="nav_div-button">
+         <button class="nav-btn"><img src="../asset/serch.svg" alt="icon"></button>
+         <button class="nav-btn"><img src="../asset/User.svg" alt="icon"></button>
+         <button class="nav-btn"><img src="../asset/hart.svg" alt="icon"></button>
+         <button class="nav-btn"><img src="../asset/cart.svg" alt="icon"></button>
+      </div>
+  </nav>
+  <main class="d-flex flex-column align-items-center gap-3 " >
+   <input type="text" name="email" id="email">
+   <input type="text" name="password" id="password">
+   <button class=" px-4 py-2 rounded-3 bg-danger-subtle  " id="LoginBtn">Registration</button>
+   <p id="info">Not Registrar</p>
+</main>
+<script>
    
+</script>
 </body>
 </html>
