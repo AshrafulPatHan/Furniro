@@ -4,10 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Registration</title>
-   <!-- Link bootstrap -->
-      <link rel="stylesheet" href="../Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-   <!-- Link css -->
-      <link rel="stylesheet" href="../Style/style.css">
+   <link rel="stylesheet" href="../Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../Style/style.css">
 </head>
 <body>
    <!-- Navbar -->
@@ -31,14 +29,55 @@
          <button class="nav-btn"><img src="../asset/cart.svg" alt="icon"></button>
       </div>
   </nav>
-  <main class="d-flex flex-column align-items-center gap-3 " >
-   <input type="text" name="email" id="email">
-   <input type="text" name="password" id="password">
-   <button class=" px-4 py-2 rounded-3 bg-danger-subtle  " id="LoginBtn">Registration</button>
-   <p id="info">Not Registrar</p>
-</main>
+
+  <!-- Registration Form -->
+  <form id="register-form" class="d-flex flex-column align-items-center gap-3 p-4">
+      <input type="text" id="username" placeholder="Username" required class="form-control w-50" />
+      <input type="email" id="email" placeholder="Email" required class="form-control w-50" />
+      <input type="password" id="password" placeholder="Password" required class="form-control w-50" />
+      <button type="submit" class="btn btn-primary px-4">Register</button>
+      <p id="response-msg" class="text-success fw-bold mt-3"></p>
+   </form>
+
 <script>
-   
+document.getElementById('register-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    const responseMsg = document.getElementById('response-msg');
+
+    try {
+        const response = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            responseMsg.textContent = data.message || "Registration successful!";
+            responseMsg.classList.remove('text-danger');
+            responseMsg.classList.add('text-success');
+
+            // Optional: redirect to login after 2 seconds
+            setTimeout(() => {
+                window.location.href = './login.html';
+            }, 2000);
+        } else {
+            responseMsg.textContent = data.message || "Registration failed.";
+            responseMsg.classList.remove('text-success');
+            responseMsg.classList.add('text-danger');
+        }
+
+    } catch (error) {
+        responseMsg.textContent = "Error: " + error.message;
+        responseMsg.classList.add('text-danger');
+    }
+});
 </script>
 </body>
 </html>

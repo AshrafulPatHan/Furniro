@@ -33,10 +33,12 @@
       <!-- main -->
   </nav>
   <main class="d-flex flex-column align-items-center gap-3 " >
-      <input type="text" name="email" id="email">
-      <input type="text" name="password" id="password">
-      <button class=" px-4 py-2 rounded-3 bg-danger-subtle  " id="LoginBtn">Login</button>
-      <p id="info">User Info</p>
+   <form id="login-form" class="d-flex flex-column align-items-center gap-3 ">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit" class=" px-4 py-2 rounded-3 bg-danger-subtle  " id="LoginBtn">Login</button>
+   </form>
+      <p id="message">User Info</p>
    </main>
         <!-- Link Bootstrap script -->
         <script src="./Style/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
@@ -44,7 +46,24 @@
         <!-- javascript -->
         <script src="./javascript/main.js"></script>
 </body>
+<!-- javascript -->
 <script>
+   document.getElementById('login-form').addEventListener('submit', async (event) => {
+       event.preventDefault();
+       const email = document.getElementById('email').value;
+       const password = document.getElementById('password').value;
 
+       try {
+           const response = await fetch('http://localhost:3000/login', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify({ email, password })
+           });
+           const data = await response.json();
+           document.getElementById('message').innerText = data.message || "Login successful!";
+       } catch (error) {
+           document.getElementById('message').innerText = "Login failed!";
+       }
+   });
 </script>
 </html>
